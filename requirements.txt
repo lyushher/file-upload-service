@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+pydantic-settings
+boto3
+psycopg2-binary
+redis
+celery
+python-jose[cryptography]
+passlib[bcrypt]
