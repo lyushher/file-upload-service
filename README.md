@@ -118,32 +118,39 @@ http://localhost:8000/docs
 
 to access the interactive Swagger UI provided by FastAPI.
 
+---
+
 ## API Endpoints
-Method	Endpoint	Description
-GET	/health	Basic health check
-POST	/presign/upload	Generate presigned PUT URL for upload
-GET	/presign/download/{key}	Generate presigned GET URL for download
+| Method | Endpoint              | Description                |
+|--------|-----------------------|----------------------------|
+| GET    | /health               | Basic health check         |
+| POST   | /presign/upload       | Generate presigned PUT URL |
+| GET    | /presign/download/{key} | Generate presigned GET URL  |
 
-Each endpoint validates file types and request payload using Pydantic schemas.
+Each endpoint validates file types and request payload using [Pydantic](https://docs.pydantic.dev/latest/) schemas.
 
-## Example Request (Presigned Upload)
+Example Request (Presigned Upload)
 ```http
 POST /presign/upload
 Content-Type: application/json
-
+```
+```json
 {
   "filename": "document.pdf",
   "content_type": "application/pdf"
 }
 ```
-
-Response:
+Example Response:
 ```json
 {
-  "url": "https://your-bucket.s3.amazonaws.com/2025/08/14/uuid-filename.pdf?X-Amz-...",
+  "url": "https://your-bucket.s3.amazonaws.com/2025/08/14/uuid-filename.pdf",
   "key": "2025/08/14/uuid-filename.pdf"
 }
 ```
+Security Note: 
+> **Ensure that only validated content types are accepted** to avoid uploading malicious files.
+
+---
 
 ## 📈 Alembic Migrations
 
@@ -157,6 +164,7 @@ alembic upgrade head
 
 Migrations are tracked in the `migrations/versions/` folder.
 
+
 ## Security Notes
 
 - No AWS credentials are ever exposed to the client.
@@ -164,6 +172,7 @@ Migrations are tracked in the `migrations/versions/` folder.
 - File names are sanitized to remove dangerous characters.
 - Large files are capped via environment-configured byte limit.
 - Only presigned requests can access/upload files.
+
 
 ## ✅ Checklist for Production
 
@@ -181,13 +190,14 @@ The actual production implementation, including critical components, secrets, an
 - Any resemblance to production behavior is for demonstration purposes only.
 - This repository is not intended for direct deployment in production environments without further security validation.
 
-
 ## License
 
 This project is licensed under the **Apache License 2.0**.  
 You may use, modify, and distribute it in accordance with the terms of the license.
 
 See the full [LICENSE](./LICENSE) file for details.
+
+---
 
 ## Author
 
