@@ -174,7 +174,7 @@ Migrations are tracked in the `migrations/versions/` folder.
 - Only presigned requests can access/upload files.
 
 
-## ✅ Checklist for Production
+## Checklist for Production
 
 - Do not commit .env — only settings.example.py
 - Set DEBUG=False in production
