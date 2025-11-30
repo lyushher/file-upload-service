@@ -196,11 +196,3 @@ This project is licensed under the **Apache License 2.0**.
 You may use, modify, and distribute it in accordance with the terms of the license.
 
 See the full [LICENSE](./LICENSE) file for details.
-
----
-
-## Author
-
-Developed by [@lyushher](https://github.com/lyushher) — Software Engineer with a focus on backend and cloud systems.  
-
-For professional inquiries or collaborations, feel free to reach out via [LinkedIn](https://www.linkedin.com/in/firdevs-akbayır-65643623a/).
