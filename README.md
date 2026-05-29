@@ -1,4 +1,5 @@
-# Secure File Upload & Presigned URL API (FastAPI + AWS S3 + PostgreSQL + Docker)
+# Secure File Upload & Presigned URL API
+
 
 ![Python](https://img.shields.io/badge/python-3.11-blue)
 ![Docker](https://img.shields.io/badge/docker-ready-blue)
@@ -152,7 +153,7 @@ Security Note:
 
 ---
 
-## 📈 Alembic Migrations
+## Alembic Migrations
 
 Initialize and apply migrations:
 
